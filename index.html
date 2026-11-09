@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#15110d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Leyendas">
+  <title>Leyendas de la Taberna</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+
+  <!-- INICIO -->
+  <section id="inicio" class="pantalla scroll">
+    <div class="portada">
+      <div class="logo">🍺⚔️</div>
+      <h1>Leyendas de la Taberna</h1>
+      <p class="sub">Un RPG de fantasía épica (con su pizca de humor) donde cada conversación puede cambiarlo todo.</p>
+    </div>
+    <div id="continuar"></div>
+    <h2>Elige tu leyenda</h2>
+    <div id="lista-pj"></div>
+    <div class="pie-inicio">
+      <button class="btn sec" data-act="ajustes">⚙️ Ajustes de IA</button>
+      <small id="etiqueta-ia-inicio" class="dim"></small>
+    </div>
+  </section>
+
+  <!-- JUEGO -->
+  <section id="juego" class="pantalla" hidden>
+    <header id="hud"></header>
+    <div id="escena-barra"></div>
+    <div id="chat" aria-live="polite"></div>
+    <div id="destinos"></div>
+    <div id="temas"></div>
+    <form id="form-msg" autocomplete="off">
+      <input id="msg" type="text" enterkeyhint="send" placeholder="Habla o describe lo que haces…" maxlength="500" autocomplete="off">
+      <button id="enviar" type="submit" aria-label="Enviar">➤</button>
+    </form>
+    <nav id="barra-acc"></nav>
+  </section>
+
+  <!-- COMBATE -->
+  <section id="combate" hidden></section>
+
+  <!-- HOJA INFERIOR (modal) -->
+  <div id="hoja" hidden>
+    <div class="hoja-caja" role="dialog" aria-modal="true">
+      <header><h3 id="hoja-titulo"></h3><button id="hoja-cerrar" aria-label="Cerrar">✕</button></header>
+      <div id="hoja-cuerpo"></div>
+    </div>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+  <input type="file" id="archivo" accept="application/json,.json" hidden>
+</main>
+
+<script src="data.js"></script>
+<script src="contenido.js"></script>
+<script src="arquetipos.js"></script>
+<script src="dialogo.js"></script>
+<script src="ai.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
